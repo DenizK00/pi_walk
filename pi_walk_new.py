@@ -28,6 +28,7 @@ class DigitStick:
             ax.scatter(self.theta, self.r)
         else:
             ax.scatter(self.theta, self.r, c=self.color, zorder=4)
+
     
 
 def digit_arc(digit, offset_r) -> float:
@@ -35,6 +36,10 @@ def digit_arc(digit, offset_r) -> float:
 
 # def init_render(self, ax):
 #     pass
+
+def render_area(digitSticks: list[DigitStick], ax):
+    pass
+    
 
 def update_result(result:pd.DataFrame, digitSticks:list[DigitStick]) -> pd.DataFrame:
     current_freqs = {str(i) + "_freq":int(digitSticks[i].r/0.5) for i in range(10)}
@@ -67,7 +72,7 @@ def main(number:str, precision:int, offset:float, coloring:str):
     angle_labels = [str((i+1)%10) for i in range(10)]
     walk_ax.set_xticks(np.pi/5. * np.linspace(1, 10, 10))
     walk_ax.set_xticklabels(angle_labels)
-        
+    
     digit_sticks = [DigitStick(digit, digit_arc(digit, offset_radian), colors[digit], coloring) for digit in range(10)]
 
     result = []
@@ -78,6 +83,12 @@ def main(number:str, precision:int, offset:float, coloring:str):
         digitFreqs[i] += 1
         digit_sticks[i].r += 0.5
         digit_sticks[i].render(walk_ax)
+
+        j = 0
+        while j < len(digit_sticks)-1:
+            walk_ax.plot([digit_sticks[j].theta, digit_sticks[j+1].theta], [digit_sticks[j].r, digit_sticks[j+1].r])
+            i += 1
+        render_area(digit_sticks, walk_ax)
         bar_ax.bar([str(ds.digit) for ds in digit_sticks], digitFreqs, color=colors)
 
         result = update_result(result, digit_sticks)
