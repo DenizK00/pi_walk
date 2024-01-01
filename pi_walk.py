@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Oct  6 14:03:44 2023
+Created on Sat Nov 11 10:30:32 2023
 
 @author: deniz
 """
@@ -98,8 +98,8 @@ def init_render(offset_radian, colors, coloring):
 
 
 def update_result(result:pd.DataFrame, digitSticks:list[DigitStick]) -> pd.DataFrame:
-    current_freqs = {str(i) + "_freq":int(digitSticks[i].r/0.5) for i in range(10)}
-    result.append(current_freqs)
+    current = {str(i) + "_freq":int(digitSticks[i].r/0.5) for i in range(10)}
+    result.append(current)
     return result
 
 
@@ -119,9 +119,9 @@ def main(number:str, precision:int, offset:float, coloring:str, speed:float, ren
 
     # fig, (walk_ax, hist_ax) = plt.subplots(1, 2) #subplot_kw={'projection': 'polar'}
     fig = plt.figure(figsize=(12, 6))
-    walk_ax = fig.add_subplot(221, projection="polar")  # Polar projection for the first subplot
+    walk_ax = fig.add_subplot(121, projection="polar")  # Polar projection for the first subplot
     bar_ax = fig.add_subplot(222) # Normal subplot
-    area_ax = fig.add_subplot(223)
+    area_ax = fig.add_subplot(224)
 
     fig.suptitle(number+" walk precision:" + str(precision))
 
@@ -137,6 +137,8 @@ def main(number:str, precision:int, offset:float, coloring:str, speed:float, ren
     bar_ax.grid()
     area_total = [0]
     area_deltas = []
+    area_alphas = []
+    delta_colors = []
 
     for c in digits:
         i = int(c)
@@ -147,11 +149,13 @@ def main(number:str, precision:int, offset:float, coloring:str, speed:float, ren
 
         area_delta = ds.area_shoelace(old_ds)
         area_deltas.append(area_delta)
+        area_alphas.append(area_delta*100/i) # Scaling by precision
         area_total.append(area_total[-1]+area_delta)
+        delta_colors.append(colors[i])
 
         bar_ax.bar([str(ds.digit) for ds in digit_sticks], digitFreqs, color=colors, zorder=2)
-        area_ax.plot(np.linspace(1, len(area_total), len(area_total)), area_total)
-        ds.render(walk_ax, rendering, old_ds, min(area_delta, 1))
+        area_ax.scatter(np.linspace(1, len(area_total[1:]), len(area_total[1:])), area_total[1:], s=area_alphas, alpha=0.31415, c=delta_colors)
+        ds.render(walk_ax, rendering, old_ds, min(area_delta/3.1415, 1))
 
         result = update_result(result, digit_sticks)
         
