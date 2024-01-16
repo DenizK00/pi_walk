@@ -183,7 +183,7 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--number", help="number to approximate: pi, e or phi", type=str, default="pi")
     parser.add_argument("-p", "--precision", help="pi approximation precision limit", type=int, default=100)
     parser.add_argument("-o", "--offset", help="visualization offset (Degrees)", type=float, default=0)
-    parser.add_argument("-c", "--coloring", help="random/digitwise", type=str, default="random")
+    parser.add_argument("-c", "--coloring", help="random/digitwise", type=str, default="digitwise")
     parser.add_argument("-s", "--speed", help="rendering speed default:1.5", type=float, default=1.5)
     parser.add_argument("-r", "--rendering", help="Rendering setting: l for lines, a for area, None for only points ", default="la") # Rendering Setting
     args = parser.parse_args()
