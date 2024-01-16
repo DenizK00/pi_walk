@@ -47,23 +47,19 @@ The main objectives of this part are:
 2. Open the command prompt or terminal depending on your operating system.
 3. Navigate to the directory where the repo is installed.
 4. Run the program as described below:
+   
 for using the simulator, the following syntax is used.
 -> python pi_walk.py
+
 to specify arguments, the following format is used (the values shown are default values):
 -> python pi_walk.py -n pi -p 100 -o 0 -c digitwise -s 1.5 -r la
+
 where:
+
 -n --number: number to simulate pi, e, or phi (default: pi)
 -p --precision: precision to simulate the number to (to how many digits do you want to use). (default: 100)
 -o --offset: offset for visualization, default: 0
 -c --coloring: random or digitwise.
 -s --speed: rendering speed for the simulation, default: 1.5
 -r --rendering: rendering setting. l for lines, a for area, None for only points default: la
-
-
-
-
-
-
-
-
 
