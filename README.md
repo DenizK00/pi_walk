@@ -19,7 +19,7 @@ The main objectives of this part are:
 The main objectives of this part are:
 1. In a notebook, import the data acquired by the simulation and manipulate the data.
 2. Make some initial inspections on the distribution of digits, digit occurrences, digit frequencies, and proportion between frequencies of digits over time.
-3.Visualize how the total_area grows over time, displaying each digit in a different color.
+3. Visualize how the total_area grows over time, displaying each digit in a different color.
 4. Inspect the digit occurrences further by displaying the occurrences of each digit over time.
 5. Plot the kernel density on area_delta vs precision per digit, which can be helpful when comparing the analysis with the other analyses.
 6. Plot area deltas over time where the size of each dot displays area_delta's divided by the precision. (Which may be indicative as the significance of a digit's occurrence decreases as the precision of the occurrence increases) e.g. 3.141, the second 1 matters less than the first 1.
