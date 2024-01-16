@@ -56,10 +56,11 @@ to specify arguments, the following format is used (the values shown are default
 
 where:
 
--n --number: number to simulate pi, e, or phi (default: pi)
--p --precision: precision to simulate the number to (to how many digits do you want to use). (default: 100)
--o --offset: offset for visualization, default: 0
--c --coloring: random or digitwise.
--s --speed: rendering speed for the simulation, default: 1.5
--r --rendering: rendering setting. l for lines, a for area, None for only points default: la
+- -n --number: number to simulate pi, e or phi (default: pi)
+- -p --precision: precision to simulate the number to (to how many digits do you want to use). (default: 100)
+- -o --offset: offset for visualization, default: 0
+- -c --coloring: random or digitwise.
+- -s --speed: rendering speed for the simulation, default: 1.5
+- -r --rendering: rendering setting. l for lines, a for area, None for only points default: la
+
 
