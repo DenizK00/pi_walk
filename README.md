@@ -2,7 +2,7 @@
 
 <img src="output_pi100.gif" width="600" align="center">
 
-This project focuses on exploring the nature of irrational numbers on different aspects. As the name suggests, the number I had in mind in particular was pi.The repo includes an animated visualization program named pi_walk and analysis notebooks.
+This project focuses on exploring the nature of irrational numbers on different aspects. As the name suggests, the number I had in mind in particular was pi. The repo includes an animated visualization program named pi_walk and analysis notebooks.
 
 ## Project Overview
 
@@ -18,12 +18,12 @@ The main objectives of this part are:
 ### Analysis and Visualization
 The main objectives of this part are:
 1. In a notebook, import the data acquired by the simulation and manipulate the data.
-2. Make some initial inspections on the distribution of digits, digit occurences, digit frequencies and proportion between frequencies of digits over time
+2. Make some initial inspections on the distribution of digits, digit occurences, digit frequencies and proportion between frequencies of digits over time.
 3. Visualize how the total_area grows over time, displaying the each digit in a different color.
 4. Inspect the digit occurences further by displaying the occurences of each digit over time.
 5. Plot the kernel density on area_delta vs precision per digit, which can be helpful when comparing the analysis with the other analyses.
-6. Plot area delta's over time where size of each dot displays area_delta's divided by the precision. (Which may be indicative as we the significance of a digit's occurence decreases as the precision the occurence happened increases) e.g. 3.141, second 1 matters less than the first 1.
-7. Visualize the area delta over time further by plotting area contribution (area_delta) divided by precision
+6. Plot area delta's over time where size of each dot displays area_delta's divided by the precision. (Which may be indicative as the significance of a digit's occurence decreases as the precision the occurence happened increases) e.g. 3.141, second 1 matters less than the first 1.
+7. Visualize the area delta over time further by plotting area contribution (area_delta) divided by precision.
 8. Inspect the digit frequencies further by displaying the digit frequencies over precision per digit.
 9. Define update periods (wait streaks) as the number of digits to see until we see the specified digit. e.g. how much digits does it take on average to get the next 0?, this can also be interpreted as the difference in precisions.
 10. Visualize the distribution of Update Periods per digit.
@@ -43,7 +43,7 @@ The main objectives of this part are:
 
 ## Using the Program
 1. Ensure all the required libraries are installed.
-2. Open the command prompt or terminal depending on your operating system
+2. Open the command prompt or terminal depending on your operating system.
 3. Navigate to the directory the repo is installed.
 4. Run the program as described below:
 
