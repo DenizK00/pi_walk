@@ -49,9 +49,11 @@ The main objectives of this part are:
 4. Run the program as described below:
    
 for using the simulator, the following syntax is used.
+
 -> python pi_walk.py
 
 to specify arguments, the following format is used (the values shown are default values):
+
 -> python pi_walk.py -n pi -p 100 -o 0 -c digitwise -s 1.5 -r la
 
 where:
